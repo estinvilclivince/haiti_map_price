@@ -1,0 +1,7 @@
+pandas
+pydeck
+plotly
+geopandas
+altair
+folium
+streamlit_folium
