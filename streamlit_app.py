@@ -132,7 +132,7 @@ with st.container():
     folium.LayerControl().add_to(m)
     st_folium(m, width=1000, height=500)
     with st.expander("Why are the markets missing ?"):
-        st.write(f"{d_product} are available on the markets from {min(filter_product['period_date'].unique())}")
+        st.write(f"Price about {d_product} are available  from {min(filter_product['period_date'].unique())}")
 
 markets = population_df['market'].unique()
 
@@ -148,11 +148,11 @@ with st.container():
     markets,
     ['Cap Haitien', 'Port-au-Prince, Croix-de-Bossales','Jacmel'])
     filter_product  = filter_product[filter_product['market'].isin(selected_markets)]
-    c = alt.Chart(filter_product).mark_line(
+    c = alt.Chart(filter_product, title=' Markets Price over  time ').mark_line(
     point=alt.OverlayMarkDef(filled=False, fill="white")
     ).encode(
     x='period_date:T',
-    y='price:Q',
+    y=alt.Y('price:Q'),
     color='admin_1:N'
     )
     st.altair_chart(c, use_container_width=True)
