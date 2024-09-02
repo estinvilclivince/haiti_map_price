@@ -4,7 +4,7 @@ import numpy as np
 import plotly.express as px
 from pathlib import Path
 import pydeck as pdk
-import shapefile as shp
+#import shapefile as shp
 import folium
 from streamlit_folium import st_folium
 import geopandas as gpd
